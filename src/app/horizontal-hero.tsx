@@ -233,36 +233,42 @@ function PanelShell({ children }: { children: ReactNode }) {
 function FirstPanel() {
   return (
     <PanelShell>
-      <Image
-        src="/gray-images/image1.png"
-        alt=""
-        width={1024}
-        height={625}
-        unoptimized
-        priority
-        className="pointer-events-none absolute bottom-0 left-1/2 z-0 h-auto w-[88vw] max-w-[1000px] -translate-x-1/2 select-none object-contain sm:w-[72vw] md:w-[64vw]"
-      />
+      <div className="flex h-full flex-col">
+        <div className="z-30 shrink-0 px-2 pt-[clamp(0.25rem,1.5vh,1rem)] text-center md:px-0">
+          <p className="text-[0.65rem] font-light uppercase tracking-[0.22em] text-[#942221] sm:text-[clamp(0.6rem,1.1vw,0.95rem)] md:tracking-[0.35em]">
+            The Reset Button
+          </p>
+          <h1 className="mt-2 text-[clamp(1.25rem,6.5vw,2.4rem)] font-bold uppercase leading-[1.05] tracking-tight text-[#1A1A1C] md:leading-none">
+            You Have Been Waiting For
+          </h1>
+        </div>
 
-      <div className="absolute left-1/2 top-[9%] z-30 w-[92vw] max-w-2xl -translate-x-1/2 px-2 text-center md:top-[11%] md:w-auto md:px-0">
-        <p className="text-[0.65rem] font-light uppercase tracking-[0.22em] text-[#942221] sm:text-[clamp(0.6rem,1.1vw,0.95rem)] md:tracking-[0.35em]">
-          The Reset Button
-        </p>
-        <h1 className="mt-2 text-[clamp(1.25rem,6.5vw,2.4rem)] font-bold uppercase leading-[1.05] tracking-tight text-[#1A1A1C] md:leading-none">
-          You Have Been Waiting For
-        </h1>
-      </div>
+        <div className="relative z-0 flex min-h-0 flex-1 items-center justify-center px-2 py-[clamp(0.5rem,2vh,1.5rem)]">
+          <Image
+            src="/gray-images/image1.png"
+            alt=""
+            width={1024}
+            height={625}
+            unoptimized
+            priority
+            className="pointer-events-none h-auto max-h-full w-auto max-w-[min(88vw,1000px)] select-none object-contain sm:max-w-[min(72vw,1000px)] md:max-w-[min(64vw,1000px)]"
+          />
+        </div>
 
-      <div className="absolute bottom-[6%] left-1/2 z-30 grid w-[92vw] max-w-lg -translate-x-1/2 grid-cols-2 gap-x-6 gap-y-3 md:bottom-[7%] md:flex md:w-auto md:max-w-none md:gap-[clamp(2rem,7vw,7rem)]">
-        {NAV.map((item) => (
-          <div key={item.n} className="text-center">
-            <p className="text-[0.6rem] font-medium uppercase tracking-[0.16em] text-[#1A1A1C] sm:text-[clamp(0.55rem,0.8vw,0.7rem)] md:tracking-[0.2em]">
-              {item.label}
-            </p>
-            <p className="mt-1 text-[0.55rem] tracking-[0.16em] text-[#942221] sm:text-[clamp(0.5rem,0.7vw,0.62rem)] md:tracking-[0.2em]">
-              {item.n}
-            </p>
+        <div className="z-30 shrink-0 px-2 pb-[clamp(0.75rem,3vh,2rem)] md:px-0">
+          <div className="mx-auto grid w-full max-w-lg grid-cols-2 gap-x-6 gap-y-3 md:flex md:w-auto md:max-w-none md:justify-center md:gap-[clamp(2rem,7vw,7rem)]">
+            {NAV.map((item) => (
+              <div key={item.n} className="text-center">
+                <p className="text-[0.6rem] font-medium uppercase tracking-[0.16em] text-[#1A1A1C] sm:text-[clamp(0.55rem,0.8vw,0.7rem)] md:tracking-[0.2em]">
+                  {item.label}
+                </p>
+                <p className="mt-1 text-[0.55rem] tracking-[0.16em] text-[#942221] sm:text-[clamp(0.5rem,0.7vw,0.62rem)] md:tracking-[0.2em]">
+                  {item.n}
+                </p>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </PanelShell>
   );
